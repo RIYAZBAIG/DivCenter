@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventBub</title>
+    <style>
+        .InnerDiv{
+            background-color: aqua;
+            padding: 25px;
+        }
+        .MidleDiv{
+            background-color:goldenrod;
+            padding: 25px;
+        }
+        .TopDiv{
+            background-color: rebeccapurple;
+            padding: 25px;
+        }
+    </style>
+    <script>
+        function TopDiv(){
+            alert('TopDiv')
+        }
+        function MidleDiv(){
+            alert('MidleDiv')
+        }
+        function InnerDiv(){
+            event.stopPropagation()
+            alert('InnerDiv')
+        }
+
+    </script>
+</head>
+<body>
+    <h1>EventBub here....</h1>
+    <div onclick="TopDiv()" class="TopDiv"  >
+        TopDiv
+        
+       <div onclick="MidleDiv()" class="MidleDiv">
+        MidleDiv
+        <div onclick="InnerDiv()" class="InnerDiv" >
+            InnerDiv
+
+        </div>
+       </div>
+    </div>
+    
+</body>
+</html>
